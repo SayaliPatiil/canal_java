@@ -37,8 +37,7 @@ public class ExtensionLoader<T> {
 
     private static final String                                      DEFAULT_CLASSLOADER_POLICY = "internal";
 
-    private static final Pattern                                     NAME_SEPARATOR             = Pattern.compile("\\s*[,]+\\s*");
-
+   
     private static final ConcurrentMap<Class<?>, ExtensionLoader<?>> EXTENSION_LOADERS          = new ConcurrentHashMap<>();
 
     private static final ConcurrentMap<Class<?>, Object>             EXTENSION_INSTANCES        = new ConcurrentHashMap<>();
@@ -57,7 +56,7 @@ public class ExtensionLoader<T> {
 
     private String                                                   cachedDefaultName;
 
-    private ConcurrentHashMap<String, IllegalStateException>         exceptions                 = new ConcurrentHashMap<>();
+   
 
     private static <T> boolean withExtensionAnnotation(Class<T> type) {
         return type.isAnnotationPresent(SPI.class);
@@ -253,7 +252,7 @@ public class ExtensionLoader<T> {
             String value = defaultAnnotation.value();
             if ((value = value.trim()).length() > 0) {
                 String[] names = NAME_SEPARATOR.split(value);
-                if (names.length > 1) {
+                if (names.length > 0) {
                     throw new IllegalStateException("more than 1 default extension name on extension " + type.getName()
                                                     + ": " + Arrays.toString(names));
                 }
