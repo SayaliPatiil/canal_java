@@ -40,7 +40,7 @@ public class SearchNode {
         boolean flag = false;  
         //Checks whether list is empty  
         if(head == null) {  
-            System.out.println("List is empty");  
+            logger.info("List is empty");  
         }  
         else {  
              do{  
