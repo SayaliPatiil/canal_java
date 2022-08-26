@@ -46,7 +46,7 @@ public class MysqlConnection implements ErosaConnection {
 
     private MysqlConnector      connector;
     private long                slaveId;
-    private Charset             charset        = Charset.forName("UTF-8");
+   
     private BinlogFormat        binlogFormat;
     private BinlogImage         binlogImage;
 
@@ -58,9 +58,7 @@ public class MysqlConnection implements ErosaConnection {
     // dump binlog bytes, 暂不包括meta与TSDB
     private AtomicLong          receivedBinlogBytes;
 
-    public MysqlConnection(){
-    }
-
+    
     public MysqlConnection(InetSocketAddress address, String username, String password){
         authInfo = new AuthenticationInfo();
         authInfo.setAddress(address);
