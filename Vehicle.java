@@ -17,9 +17,9 @@ class Car extends Truck {
     Car myFastCar = new Car();
    myFastCar.honk();
     myFastCar.honk1();
-    System.out.println("Model name" + myFastCar.brand);
-    System.out.println("Model name" + myFastCar.modelName);
-     System.out.println("Model name" + myFastCar.modelName1);
+    logger.info("Model name" + myFastCar.brand);
+    logger.info("Model name" + myFastCar.modelName);
+    logger.info("Model name" + myFastCar.modelName1);
   }
 
 }
