@@ -22,8 +22,7 @@ public class LogBuffer {
     protected int    position;
     protected int    semival;
 
-    protected LogBuffer(){
-    }
+    
 
     public LogBuffer(byte[] buffer, final int origin, final int limit){
         if (origin + limit > buffer.length) throw new IllegalArgumentException("capacity excceed: " + (origin + limit));
